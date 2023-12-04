@@ -44,7 +44,9 @@ def main():
       nextCards = matches[i]
       copies = totalCards[i]
       # populate the next cards
-      for j in range(i + 1, len(totalCards)):
+      for j in range(i + 1, len(totalCards)): # Had a bug here. I was doing for j in range(i + 1, nextCard). 
+        # My bug was in thinking that i would count up while nextcards, but didnt remember that range(start, end), so if end <= start, it'll never run
+        # It was a nasty bug, but conceptually pretty simple :) 
         if nextCards == 0:
           break
         totalCards[j] += copies
